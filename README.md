@@ -10,9 +10,6 @@ This repository measures how much coastal vegetation was lost along the first 47
 ---
 
 ## Contents
-
-- [Key findings](#key-findings)
-- [Workflow](#workflow)
 - [Repository structure](#repository-structure)
 - [Quick start](#quick-start-reproduce-every-number-in-2-minutes)
 - [Guided notebooks](#guided-notebooks)
@@ -24,70 +21,6 @@ This repository measures how much coastal vegetation was lost along the first 47
 - [Key methodological decisions](#key-methodological-decisions)
 - [Limitations](#limitations)
 - [Citation, licence and acknowledgements](#citation-licence-and-acknowledgements)
-
----
-
-## Key findings
-
-| | Finding |
-|---|---|
-| **Direct loss** | By the 2026 dry season, **97%** of the vegetation that stood in the construction footprint in 2020 had gone (221 of 228 ha), against 23% in the control pseudo-footprints. |
-| **Attributable loss in the footprint** | **+64.4 percentage points** more loss than matched controls (95% CI 50.5–78.3; wild-bootstrap p = 0.002). |
-| **Distance decay** | Attributable loss falls with distance from the road: **+6.5 pp** at 0–500 m (p = 0.004), +3.0 pp at 0.5–1 km (p = 0.07), +1.0 pp at 1–5 km (p = 0.48). |
-| **Loss moved onto the road** | Before construction only **4%** of loss hotspots lay within 500 m of the alignment; during construction **57%** did (median distance 3.3 km → 0.29 km). Robust to every grid tested (47–66% vs 4–8%). |
-| **Fragmentation** | In the corridor, the largest vegetation patch shrank by a further **14.6 pp** of land relative to matched controls during construction (p < 0.001), about twice the pre-construction rate in half the time. |
-| **Honest caveat** | Much of the loss 1–5 km from the road **predates** construction (urbanisation of Lekki), and the 0–500 m band already had a pre-trend, so induced loss beyond the footprint cannot yet be cleanly separated from ongoing urban growth. |
-
-Maps are 83% accurate (DS2020 83.0 ± 4.9%; DS2026 83.2 ± 4.2%). Mapped loss is overstated (user's accuracy of the loss class 25%), which is why all attribution relies on the **difference** between Section 1 and controls, not on raw mapped areas. Commission error is higher in the controls (81%) than in Section 1 (65%), so the estimates are conservative.
-
----
-
-| Element | Specification |
-|---|---|
-| Treated corridor | Section 1, Ahmadu Bello Way (Victoria Island) eastwards, 47.49 km centreline |
-| Construction footprint (F) | Digitised from Esri Wayback (Nov 2024 – Apr 2025), checked on PlanetScope 2026; 332 ha, mean width 69.4 m |
-| Distance bands | B1 0–500 m, B2 500 m–1 km, B3 1–5 km from the footprint edge |
-| Analysis unit | 1 km segment × zone ("segment–zone"): 47 treated segments (T01–T47) |
-| Controls | 24 coastal stretches of ~5 km screened; 4 rejected (10 km exclusion zone, Dangote refinery / Lekki Deep Sea Port, Lekki Free Trade Zone, poor 2020 imagery); 66 western (CW01–CW66, Badagry coast, ≈2.71–3.31°E) and 44 eastern (CE01–CE44, ≈4.06–4.45°E) segments, each with a 69.4 m pseudo-footprint and the same bands |
-| Total | 157 segments × 4 zones = **628 segment–zone units** × 7 years = 4,396 observations |
-| Time | Dry seasons DS2020–DS2026 (DSyyyy = 1 Nov yyyy−1 to 31 Mar yyyy). Construction began March 2024, between DS2024 and DS2025 |
-| Projection | WGS 84 / UTM zone 31N (EPSG:32631) throughout |
-
----
-
-## Workflow
-
-![Analytical workflow](docs/figures/fig2_workflow.jpg)
-
-```mermaid
-flowchart TD
-    subgraph GEE["Google Earth Engine (gee/)"]
-      A[01 Dry-season composites<br/>Sentinel-2 SR + Cloud Score+] --> B[02 Check composites<br/>draw training polygons]
-      B --> C[03 Random Forest<br/>7 land-cover maps]
-      C --> D[04-05 Panel table<br/>628 units x 7 years]
-      C --> E[06 Accuracy points<br/>300 stratified]
-      C --> F[07-09 Downloads<br/>true colour, maps, change map]
-    end
-    subgraph PY["Python (python/)"]
-      G[01 Control units] --> H[02 Segment covariates]
-      D --> H
-      E --> I[03 Accuracy and error-adjusted areas]
-      H --> J[04 Matching + DiD + event study]
-      F --> K[05 Fragmentation]
-      F --> L[06 Hotspots Gi*]
-      J --> K
-      I --> M[07-08 Results workbook]
-      J --> M
-      K --> M
-      L --> M
-      J --> N[10 Figures 6-7]
-    end
-    subgraph GIS["ArcGIS Pro"]
-      O[Figures 1, 3, 4, 5, 8]
-    end
-    F --> O
-    L --> O
-```
 
 ---
 
@@ -428,7 +361,7 @@ Beyond 500 m no metric changed significantly during construction; the significan
 
 If you use this code or data, please cite the paper (details to be added on publication) and this repository (see `CITATION.cff`; a Zenodo DOI will be added on release).
 
-> Ayomide, J. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
+> Samson J.A. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
 
 **Licence.** Code: MIT (see `LICENSE`). Derived data in `data/` and `results/`: CC BY 4.0 (see `data/LICENSE.md`). Sentinel-1 and Sentinel-2 data: Copernicus (ESA), free and open. Esri World Imagery Wayback: © Esri and its data providers, used for reference labelling only and not redistributed here. PlanetScope imagery © Planet Labs PBC, used for visual reference only and not redistributed.
 
@@ -436,4 +369,4 @@ If you use this code or data, please cite the paper (details to be added on publ
 
 **Key references.** Olofsson et al. (2014) *Remote Sensing of Environment* 148, 42–57 · Stehman (2014) *IJRS* 35, 4923–4939 · Getis & Ord (1992) *Geographical Analysis* 24, 189–206 · Benjamini & Hochberg (1995) *JRSS B* 57, 289–300 · Cameron, Gelbach & Miller (2008) *REStat* 90, 414–427 · Stuart (2010) *Statistical Science* 25, 1–21 · Barber et al. (2014) *Biological Conservation* 177, 203–209.
 
-**Author.** Jonathan Ayomide, School of Geographical and Earth Sciences, University of Glasgow (Commonwealth Scholar).
+**Author.** Jonathan Ayomide Samson, School of Geographical and Earth Sciences, University of Glasgow (Commonwealth Scholar).
