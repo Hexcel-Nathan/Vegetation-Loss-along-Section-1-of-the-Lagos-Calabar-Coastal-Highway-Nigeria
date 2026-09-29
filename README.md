@@ -369,4 +369,4 @@ If you use this code or data, please cite the paper (details to be added on publ
 
 **Key references.** Olofsson et al. (2014) *Remote Sensing of Environment* 148, 42–57 · Stehman (2014) *IJRS* 35, 4923–4939 · Getis & Ord (1992) *Geographical Analysis* 24, 189–206 · Benjamini & Hochberg (1995) *JRSS B* 57, 289–300 · Cameron, Gelbach & Miller (2008) *REStat* 90, 414–427 · Stuart (2010) *Statistical Science* 25, 1–21 · Barber et al. (2014) *Biological Conservation* 177, 203–209.
 
-**Author.** Jonathan Ayomide Samson, School of Geographical and Earth Sciences, University of Glasgow (Commonwealth Scholar).
+**Author.** Samson Jonathan Ayomide, School of Geographical and Earth Sciences, University of Glasgow (Commonwealth Scholar).
