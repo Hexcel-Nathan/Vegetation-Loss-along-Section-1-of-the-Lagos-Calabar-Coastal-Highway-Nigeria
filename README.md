@@ -17,6 +17,7 @@ Photo Credit: Punch Newspaper (2026).
 - [Workflow](#workflow)
 - [Repository structure](#repository-structure)
 - [Quick start](#quick-start-reproduce-every-number-in-2-minutes)
+- [Guided notebooks](#guided-notebooks)
 - [Full reproduction from satellite imagery](#full-reproduction-from-satellite-imagery-google-earth-engine)
 - [Scripts in run order](#scripts-in-run-order)
 - [Methods in detail](#methods-in-detail)
@@ -109,6 +110,7 @@ lagos-calabar-s1-vegetation-loss/
 ├── gee/                      ← Google Earth Engine scripts (JavaScript, Code Editor)
 │   ├── 01_composites.js … 09_change_map_download.js
 │   └── archive/00_original_full_workflow_reference.js   (first design, superseded; kept for transparency)
+├── notebooks/                ← six guided Jupyter notebooks: explanation + code + results, step by step
 ├── python/                   ← analysis scripts, run in numbered order (or python/run_all.py)
 │   ├── paths.py              ← folder locations shared by every script
 │   └── 01_… 10_…py, run_all.py
@@ -154,6 +156,28 @@ Expected console output ends with `All steps finished. Outputs are in results/.`
 | `hotspot_summary.csv`, `vectors/hotspots_S1_5ha.shp` | Gi* hotspot statistics and the map layer | Fig. 8, Table S3 |
 | `vectors/segment_zones_all.shp` | All 628 analysis units | Fig. 1 |
 | `Figure2_workflow.png`, `Figure6_loss_trajectories.png`, `Figure7_event_study.png` | Publication figures made in Python (300 dpi) | Figs 2, 6, 7 |
+
+---
+
+## Guided notebooks
+
+The `notebooks/` folder tells the same analysis as a story: every step is explained in plain language (with the equations where they matter), followed by the code and its results: tables, maps and charts. GitHub shows the notebooks **with their outputs**, so you can read them without running anything. They produce exactly the same numbers as the scripts (checked).
+
+| Notebook | Question | What you will see |
+|---|---|---|
+| [`00_overview_and_data`](notebooks/00_overview_and_data.ipynb) | What data do we have? | Folder contents, the panel table, the outcome variable, land-cover maps for 2020 / 2024 / 2026 |
+| [`01_analysis_units_and_covariates`](notebooks/01_analysis_units_and_covariates.ipynb) | How were treated and control units built? | Control segments and Voronoi-split zones, map of all 628 units, baseline covariates, how different the groups were in 2020 |
+| [`02_accuracy_assessment`](notebooks/02_accuracy_assessment.ipynb) | How accurate are the maps? | Blind-label matching, the Olofsson estimators, error matrices, mapped vs error-adjusted areas, commission error by group |
+| [`03_matching_and_difference_in_differences`](notebooks/03_matching_and_difference_in_differences.ipynb) | How much loss did the highway cause? | Matching and balance plot, the three DiD specifications, wild bootstrap, event study, loss trajectories |
+| [`04_vegetation_fragmentation`](notebooks/04_vegetation_fragmentation.ipynb) | Did the road break up the vegetation? | Patch metrics explained, a worked example (segment T33 before/after), metric trajectories, DiD on each metric |
+| [`05_hotspots_of_loss`](notebooks/05_hotspots_of_loss.ipynb) | Where was loss concentrated? | Persistent loss, hexagon grid, Gi* with FDR, before/during maps, distance-to-road distribution, sensitivity analysis |
+
+Run them in order (01 → 05), because later notebooks use files written by earlier ones:
+
+```bash
+pip install jupyter          # once
+jupyter lab notebooks/       # or: jupyter notebook
+```
 
 ---
 
@@ -412,9 +436,9 @@ Beyond 500 m no metric changed significantly during construction; the significan
 
 If you use this code or data, please cite the paper (details to be added on publication) and this repository (see `CITATION.cff`; a Zenodo DOI will be added on release).
 
-> Samson J. A. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
+> Ayomide, J. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
 
-**Licence.** Code: MIT (see `LICENSE`). Derived data in `data/` and `results/`: CC BY 4.0. Sentinel-1 and Sentinel-2 data: Copernicus (ESA), free and open. Esri World Imagery Wayback: © Esri and its data providers, used for reference labelling only and not redistributed here. PlanetScope imagery © Planet Labs PBC, used for visual reference only and not redistributed.
+**Licence.** Code: MIT (see `LICENSE`). Derived data in `data/` and `results/`: CC BY 4.0 (see `data/LICENSE.md`). Sentinel-1 and Sentinel-2 data: Copernicus (ESA), free and open. Esri World Imagery Wayback: © Esri and its data providers, used for reference labelling only and not redistributed here. PlanetScope imagery © Planet Labs PBC, used for visual reference only and not redistributed.
 
 **Software.** Google Earth Engine (Gorelick et al., 2017); Python with pandas, statsmodels (Seabold & Perktold, 2010), GeoPandas, rasterio, SciPy, PySAL/esda (Rey & Anselin, 2007), openpyxl and matplotlib; ArcGIS Pro for cartography.
 
