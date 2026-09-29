@@ -1,0 +1,5 @@
+stratum,name,area_ha,points
+1,stable vegetation,43423.50515605622,80
+2,vegetation lost,9265.696725869762,100
+3,vegetation gained,3865.513167121891,50
+4,stable non-vegetation,34932.05905661087,70
