@@ -11,8 +11,6 @@ This repository measures how much coastal vegetation was lost along the first 47
 
 ## Contents
 - [Repository structure](#repository-structure)
-- [Quick start](#quick-start-reproduce-every-number-in-2-minutes)
-- [Guided notebooks](#guided-notebooks)
 - [Full reproduction from satellite imagery](#full-reproduction-from-satellite-imagery-google-earth-engine)
 - [Scripts in run order](#scripts-in-run-order)
 - [Data dictionary](#data-dictionary)
@@ -46,63 +44,6 @@ lagos-calabar-s1-vegetation-loss/
 ├── results/                  ← everything produced by python/ (re-created by run_all.py)
 └── docs/figures/             ← images used in this README
 ```
-
----
-
-## Quick start: reproduce every number in 2 minutes
-
-The Earth Engine outputs are already in `data/`, so the whole statistical analysis runs locally.
-
-```bash
-git clone https://github.com/Hexcel-Nathan/Vegetation-Loss-along-Section-1-of-the-Lagos-Calabar-Coastal-Highway-Nigeria.git
-cd Vegetation-Loss-along-Section-1-of-the-Lagos-Calabar-Coastal-Highway-Nigeria
-
-# with conda (recommended on Windows, because of GDAL/rasterio)
-conda create -n lagcal -c conda-forge python=3.11 geopandas rasterio libpysal esda statsmodels openpyxl matplotlib pyshp
-conda activate lagcal
-
-# or with pip
-pip install -r requirements.txt
-
-python python/run_all.py
-```
-
-Expected console output ends with `All steps finished. Outputs are in results/.` Main outputs:
-
-| File in `results/` | What it is | Paper |
-|---|---|---|
-| `Vegetation_loss_results.xlsx` | Everything in one workbook: live-formula summary, accuracy, matching, DiD, event study, fragmentation, hotspots | Tables 2–5, S2–S4 |
-| `accuracy_summary.csv`, `accuracy_error_matrices.csv` | Olofsson accuracies and error-adjusted areas | Table 2, Table S2 |
-| `matching_balance.csv`, `matched_pairs.csv` | Covariate balance (SMD) and the matched pairs | Table 4 |
-| `did_results.csv`, `event_study.csv` | Pooled DiD (3 specifications) and event-study coefficients | Table 5, Fig. 7 |
-| `fragmentation_summary.csv`, `fragmentation_did.csv` | Patch metrics and their DiD | Section 4.4, Table S4 |
-| `hotspot_summary.csv`, `vectors/hotspots_S1_5ha.shp` | Gi* hotspot statistics and the map layer | Fig. 8, Table S3 |
-| `vectors/segment_zones_all.shp` | All 628 analysis units | Fig. 1 |
-| `Figure2_workflow.png`, `Figure6_loss_trajectories.png`, `Figure7_event_study.png` | Publication figures made in Python (300 dpi) | Figs 2, 6, 7 |
-
----
-
-## Guided notebooks
-
-The `notebooks/` folder tells the same analysis as a story: every step is explained in plain language (with the equations where they matter), followed by the code and its results: tables, maps and charts. GitHub shows the notebooks **with their outputs**, so you can read them without running anything. They produce exactly the same numbers as the scripts (checked).
-
-| Notebook | Question | What you will see |
-|---|---|---|
-| [`00_overview_and_data`](notebooks/00_overview_and_data.ipynb) | What data do we have? | Folder contents, the panel table, the outcome variable, land-cover maps for 2020 / 2024 / 2026 |
-| [`01_analysis_units_and_covariates`](notebooks/01_analysis_units_and_covariates.ipynb) | How were treated and control units built? | Control segments and Voronoi-split zones, map of all 628 units, baseline covariates, how different the groups were in 2020 |
-| [`02_accuracy_assessment`](notebooks/02_accuracy_assessment.ipynb) | How accurate are the maps? | Blind-label matching, the Olofsson estimators, error matrices, mapped vs error-adjusted areas, commission error by group |
-| [`03_matching_and_difference_in_differences`](notebooks/03_matching_and_difference_in_differences.ipynb) | How much loss did the highway cause? | Matching and balance plot, the three DiD specifications, wild bootstrap, event study, loss trajectories |
-| [`04_vegetation_fragmentation`](notebooks/04_vegetation_fragmentation.ipynb) | Did the road break up the vegetation? | Patch metrics explained, a worked example (segment T33 before/after), metric trajectories, DiD on each metric |
-| [`05_hotspots_of_loss`](notebooks/05_hotspots_of_loss.ipynb) | Where was loss concentrated? | Persistent loss, hexagon grid, Gi* with FDR, before/during maps, distance-to-road distribution, sensitivity analysis |
-
-Run them in order (01 → 05), because later notebooks use files written by earlier ones:
-
-```bash
-pip install jupyter          # once
-jupyter lab notebooks/       # or: jupyter notebook
-```
-
----
 
 ## Full reproduction from satellite imagery (Google Earth Engine)
 
