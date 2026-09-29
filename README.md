@@ -4,9 +4,8 @@
 
 This repository measures how much coastal vegetation was lost along the first 47.5 km of the Lagos–Calabar Coastal Highway, and how much of that loss **the road itself caused**, as distinct from the urbanisation that was already transforming the Lekki corridor. It combines seven years of Sentinel-2 and Sentinel-1 imagery (2020–2026), a Random Forest land-cover classification, a design-based accuracy assessment, and a matched event-study **difference-in-differences** comparison with 110 kilometres of untouched control coastline.
 
-![Vegetation change 2020–2026 in Section 1](docs/figures/fig9_Lagos-Calabar_Coastal_Highway.jpg)
-* Lagos-Calabar Coastal Highway.
-Photo Credit: Punch Newspaper (2026).
+![The Lagos–Calabar Coastal Highway](docs/figures/fig9_Lagos-Calabar_Coastal_Highway.jpg)
+*The Lagos–Calabar Coastal Highway. Photo: Punch Newspaper (2026).*
 
 ---
 
@@ -131,8 +130,8 @@ lagos-calabar-s1-vegetation-loss/
 The Earth Engine outputs are already in `data/`, so the whole statistical analysis runs locally.
 
 ```bash
-git clone https://github.com/<your-username>/lagos-calabar-s1-vegetation-loss.git
-cd lagos-calabar-s1-vegetation-loss
+git clone https://github.com/Hexcel-Nathan/Vegetation-Loss-along-Section-1-of-the-Lagos-Calabar-Coastal-Highway-Nigeria.git
+cd Vegetation-Loss-along-Section-1-of-the-Lagos-Calabar-Coastal-Highway-Nigeria
 
 # with conda (recommended on Windows, because of GDAL/rasterio)
 conda create -n lagcal -c conda-forge python=3.11 geopandas rasterio libpysal esda statsmodels openpyxl matplotlib pyshp
