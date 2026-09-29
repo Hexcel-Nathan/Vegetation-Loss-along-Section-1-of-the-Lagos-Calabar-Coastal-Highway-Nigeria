@@ -4,15 +4,14 @@
 
 This repository measures how much coastal vegetation was lost along the first 47.5 km of the Lagos–Calabar Coastal Highway, and how much of that loss **the road itself caused**, as distinct from the urbanisation that was already transforming the Lekki corridor. It combines seven years of Sentinel-2 and Sentinel-1 imagery (2020–2026), a Random Forest land-cover classification, a design-based accuracy assessment, and a matched event-study **difference-in-differences** comparison with 110 kilometres of untouched control coastline.
 
-![The Lagos–Calabar Coastal Highway](docs/figures/fig9_Lagos-Calabar_Coastal_Highway.jpg)
-*The Lagos–Calabar Coastal Highway. Photo: Punch Newspaper (2026).*
+![Vegetation change 2020–2026 in Section 1](docs/figures/fig4_vegetation_change.jpg)
+*Vegetation change in Section 1 between the 2020 and 2026 dry seasons. Orange = vegetation lost; the continuous orange strip along the coast is the construction footprint.*
 
 ---
 
 ## Contents
 
 - [Key findings](#key-findings)
-- [Study area and design](#study-area-and-design)
 - [Workflow](#workflow)
 - [Repository structure](#repository-structure)
 - [Quick start](#quick-start-reproduce-every-number-in-2-minutes)
@@ -42,12 +41,6 @@ This repository measures how much coastal vegetation was lost along the first 47
 Maps are 83% accurate (DS2020 83.0 ± 4.9%; DS2026 83.2 ± 4.2%). Mapped loss is overstated (user's accuracy of the loss class 25%), which is why all attribution relies on the **difference** between Section 1 and controls, not on raw mapped areas. Commission error is higher in the controls (81%) than in Section 1 (65%), so the estimates are conservative.
 
 ---
-
-## Study area and design
-
-![Study area](docs/figures/fig1_study_area.jpg)
-
-*(a) Nigeria and the coastal highway states; (b) the Lagos coast with Section 1 (red) and the western and eastern control stretches (blue); (c) Section 1 and its construction footprint on the DS2026 Sentinel-2 composite.*
 
 | Element | Specification |
 |---|---|
