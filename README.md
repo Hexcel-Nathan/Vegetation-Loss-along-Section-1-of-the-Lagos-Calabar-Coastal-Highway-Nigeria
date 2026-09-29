@@ -1,1 +1,0 @@
-# Vegetation-Loss-along-Section-1-of-the-Lagos-Calabar-Coastal-Highway-Nigeria
