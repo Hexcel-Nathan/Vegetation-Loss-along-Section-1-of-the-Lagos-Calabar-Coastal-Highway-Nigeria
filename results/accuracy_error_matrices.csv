@@ -1,0 +1,9 @@
+map \ reference,map,Vegetation,Non-vegetation,Stable vegetation,Vegetation lost,Vegetation gained,Stable non-vegetation
+Vegetation,DS2020 map,149.0,31.0,,,,
+Non-vegetation,DS2020 map,41.0,79.0,,,,
+Vegetation,DS2026 map,98.0,32.0,,,,
+Non-vegetation,DS2026 map,70.0,100.0,,,,
+Stable vegetation,Change 2020-2026,,,69.0,3.0,5.0,3.0
+Vegetation lost,Change 2020-2026,,,52.0,25.0,9.0,14.0
+Vegetation gained,Change 2020-2026,,,20.0,7.0,4.0,19.0
+Stable non-vegetation,Change 2020-2026,,,8.0,6.0,1.0,55.0

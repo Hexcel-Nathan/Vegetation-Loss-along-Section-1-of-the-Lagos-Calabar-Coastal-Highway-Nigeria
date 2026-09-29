@@ -1,0 +1,70 @@
+treated_segment,matched_control,mahalanobis_distance
+T01,(no match within caliper),1.479
+T02,(no match within caliper),0.833
+T03,(no match within caliper),1.046
+T04,(no match within caliper),0.813
+T05,(no match within caliper),0.977
+T06,(no match within caliper),0.9
+T07,(no match within caliper),1.291
+T08,(no match within caliper),1.314
+T09,(no match within caliper),1.425
+T10,(no match within caliper),1.281
+T11,(no match within caliper),0.886
+T12,(no match within caliper),0.911
+T13,(no match within caliper),1.116
+T14,(no match within caliper),0.944
+T15,(no match within caliper),0.487
+T16,(no match within caliper),0.591
+T17,CW61,0.28
+T17,CW62,0.343
+T18,(no match within caliper),0.175
+T19,(no match within caliper),0.564
+T20,(no match within caliper),0.514
+T21,(no match within caliper),0.562
+T22,(no match within caliper),0.632
+T23,(no match within caliper),0.593
+T24,(no match within caliper),0.6
+T25,CW57,0.206
+T25,CW59,0.415
+T26,CW37,0.125
+T26,CW34,0.155
+T27,CW59,0.315
+T27,CW57,0.435
+T28,CW57,0.201
+T28,CW59,0.342
+T29,CW59,0.163
+T29,CW28,0.197
+T30,CW24,0.218
+T30,CW33,0.236
+T31,CW60,0.078
+T31,CW22,0.205
+T32,(no match within caliper),0.386
+T33,(no match within caliper),0.545
+T34,CW60,0.179
+T34,CW58,0.197
+T35,CW57,0.147
+T35,CW59,0.208
+T36,CW25,0.06
+T36,CW21,0.105
+T37,CW30,0.139
+T37,CW27,0.156
+T38,CW57,0.297
+T38,CW38,0.315
+T39,CW57,0.162
+T39,CW34,0.185
+T40,CW01,0.15
+T40,CW30,0.155
+T41,CW16,0.283
+T41,CW18,0.302
+T42,CW59,0.238
+T42,CW28,0.351
+T43,CW59,0.139
+T43,CW57,0.26
+T44,CW59,0.199
+T44,CW57,0.22
+T45,CW34,0.158
+T45,CW57,0.227
+T46,CW33,0.126
+T46,CW23,0.201
+T47,CW34,0.021
+T47,CW37,0.073

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data"
+authors:
+  - family-names: Ayomide
+    given-names: Jonathan
+    affiliation: "School of Geographical and Earth Sciences, University of Glasgow"
+version: 1.0.0
+date-released: 2026-09-29
+license: MIT
+keywords: [remote sensing, Google Earth Engine, Sentinel-2, difference-in-differences, road ecology, Lagos, coastal highway]
+# After creating a Zenodo release, add:  doi: 10.5281/zenodo.XXXXXXX
