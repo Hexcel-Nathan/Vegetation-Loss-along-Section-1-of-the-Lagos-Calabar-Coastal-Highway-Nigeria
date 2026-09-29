@@ -411,7 +411,7 @@ Beyond 500 m no metric changed significantly during construction; the significan
 
 If you use this code or data, please cite the paper (details to be added on publication) and this repository (see `CITATION.cff`; a Zenodo DOI will be added on release).
 
-> Ayomide, J. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
+> Samson J. A. (2026). *Remote sensing assessment of vegetation loss following construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria: code and data* (v1.0.0). GitHub.
 
 **Licence.** Code: MIT (see `LICENSE`). Derived data in `data/` and `results/`: CC BY 4.0. Sentinel-1 and Sentinel-2 data: Copernicus (ESA), free and open. Esri World Imagery Wayback: © Esri and its data providers, used for reference labelling only and not redistributed here. PlanetScope imagery © Planet Labs PBC, used for visual reference only and not redistributed.
 
