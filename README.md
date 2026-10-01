@@ -1,5 +1,7 @@
 # Vegetation Loss along Section 1 of the Lagos–Calabar Coastal Highway, Nigeria
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23039946.svg)](https://doi.org/10.5281/zenodo.23039946)
+
 **Code, data and results for:** *Remote Sensing Assessment of Vegetation Loss Following Construction of Phase 1 of the Lagos–Calabar Coastal Highway, Nigeria* (Ayomide, manuscript in preparation).
 
 This repository measures how much coastal vegetation was lost along the first 47.5 km of the Lagos–Calabar Coastal Highway, and how much of that loss **the road itself caused**, as distinct from the urbanisation that was already transforming the Lekki corridor. It combines seven years of Sentinel-2 and Sentinel-1 imagery (2020–2026), a Random Forest land-cover classification, a design-based accuracy assessment, and a matched event-study **difference-in-differences** comparison with 110 kilometres of untouched control coastline.
