@@ -9,4 +9,4 @@ version: 1.0.0
 date-released: 2026-09-29
 license: MIT
 keywords: [remote sensing, Google Earth Engine, Sentinel-2, difference-in-differences, road ecology, Lagos, coastal highway]
-# After creating a Zenodo release, add:  doi: 10.5281/zenodo.XXXXXXX
+doi: 10.5281/zenodo.23039946 
